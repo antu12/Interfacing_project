@@ -6,17 +6,25 @@ GPIO.setmode(GPIO.BCM)
 
 # Set relay pins as output
 GPIO.setup(3, GPIO.OUT)
+GPIO.output(3, GPIO.LOW)
 
+try:
+    i=0
+    while (i<5):
+        print i
+        # Turn all relays OFF
+        GPIO.output(3, GPIO.HIGH)
 
-while (True):
-    
-    # Turn all relays ON
-    GPIO.output(3, GPIO.HIGH)
+        # Sleep for 5 seconds
+        sleep(2) 
+        # Turn all relays ON
+        GPIO.output(3, GPIO.LOW)
+     
+        # Sleep for 5 seconds
+        sleep(2)
+        i=i+1
 
-    # Sleep for 5 seconds
-    sleep(5) 
-    # Turn all relays OFF
+finally:
     GPIO.output(3, GPIO.LOW)
- 
-    # Sleep for 5 seconds
-    sleep(5)
+    GPIO.cleanup()
+    
