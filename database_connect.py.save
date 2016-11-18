@@ -1,5 +1,6 @@
-import mysql.connector
-conn=mysql.connector.connect(user='root', password='Nopassword01', host='52.165.29.136', database='autohome')
+
+port mysql.connector
+conn=mysql.connector.connect(user='root', password='', host='localhost', database='autohome')
 cursor=conn.cursor()
 query=("SELECT * from switch")
 cursor.execute(query)
