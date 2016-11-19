@@ -11,10 +11,6 @@ GPIO.output(19, 0)
 while True:
        i=GPIO.input(11)
        j=GPIO.input(12)
-       #if i==0:                 #When output from motion sensor is LOW
-            # print "No intruders",i
-             #GPIO.output(3, 0)  #Turn OFF LED
-             #time.sleep(0.1)
        if i==0:
              print "Red No intruders",i
              GPIO.output(3, 0)  #Turn OFF LED
@@ -26,17 +22,10 @@ while True:
 
        if j==1:               #When output from motion sensor is HIGH
              print "Green Intruder detected",j
-             if i==1:
-                j=0
-                GPIO.output(19, 0)
-                continue
-		GPIO.output(19, 1)  #Turn ON LED
-	        time.sleep(0.5)
+             
+	     GPIO.output(19, 1)  #Turn ON LED
+	     time.sleep(0.5)
        if i==1:
              print "Red Intruder detected",i
-	     if j==1:
-                i=0
-                GPIO.output(3, 0)
-                continue
              GPIO.output(3, 1) #Turn ON LED
 	     time.sleep(0.5)
