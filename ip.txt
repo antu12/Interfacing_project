@@ -1,5 +1,5 @@
 52.165.29.136
-
+http://interfacingproject.azurewebsites.net/
 C:\xampp\mysql\bin>mysql -h 52.165.29.136 -u root -p
 Enter password: ************
 sudo app-get python-mysql.connector install
